@@ -1,6 +1,3 @@
-"""
-Added a store. The hero can now buy a tonic or a sword. A tonic will add 2 to the hero's health wherease a sword will add 2 power.
-"""
 import random
 import time
 
