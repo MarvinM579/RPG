@@ -141,7 +141,6 @@ class Battle(object):
             print "You defeated the %s" % enemy.name
             return True
         else:
-            print "YOU LOSE!"
             return False
 
 
@@ -163,11 +162,28 @@ class Sword(object):
         print "%s's power increased to %d." % (hero.name, hero.power)
 
 
+class Super_Tonic(object):
+    cost = 20
+    name = 'super tonic'
+
+    def apply(self, character):
+        character.health += (10 - character.health)
+        print "%s's health has been restored to %d" % (character.name, character.health)
+
+
+# class Armor(object):
+#     cost = 15
+#     name = 'armor'
+#
+#     def apply(self, character):
+#         if character.receive_damage:
+
+
 class Store(object):
     # If you define a variable in the scope of a class:
     # This is a class variable and you can access it like
     # Store.items => [Tonic, Sword]
-    items = [Tonic, Sword]
+    items = [Tonic, Sword, Super_Tonic, ]
 
     def do_shopping(self, hero):
         while True:
