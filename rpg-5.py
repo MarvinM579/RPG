@@ -28,6 +28,7 @@ class Character(object):
             print "%s is dead." % self.name
 
     def print_status(self):
+        print "hello!"
         print "%s has %d health and %d power." % (self.name, self.health, self.power)
 
 
@@ -42,6 +43,7 @@ class Hero(Character):
     def recieve_bounty(self, enemy):
         self.coins += enemy.bounty
         print "You recived %d coins for defeating the %s" % (enemy.bounty, enemy.name)
+        
 
     def attack(self, enemy):
         crit = random.random() > 0.8
@@ -58,6 +60,7 @@ class Hero(Character):
     def restore(self):
         self.health = 10
         print "Hero's heath is restored to %d!" % self.health
+        
         time.sleep(1)
 
     def buy(self, item):
@@ -115,6 +118,7 @@ class Battle(object):
         print "====================="
         print "Hero faces the %s" % enemy.name
         print "====================="
+
         while hero.alive() and enemy.alive():
             hero.print_status()
             enemy.print_status()
